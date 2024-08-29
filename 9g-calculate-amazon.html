@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculate Amazon</title>
+</head>
+<body>
+  <input placeholder="Enter cost" class="js-inputCost" onkeydown="handleKey(event)">
+  <button class="js-buttonCost" onclick="
+    calculateTotal();
+  ">Calculate</button>
+  <p class="js-text"></p>
+
+  <script>
+    function calculateTotal(){
+      let inputCost= Number(document.querySelector('.js-inputCost').value*100);
+
+      if(inputCost < 4000){
+        inputCost+=1000;
+      }
+      document.querySelector('.js-text').innerHTML=`$${inputCost/100}`;
+    }
+
+    function handleKey(event){
+      if(event.key==='Enter'){
+        calculateTotal();
+      }
+    }
+
+  </script>
+  
+</body>
+</html>
