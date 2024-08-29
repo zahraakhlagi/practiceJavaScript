@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document object model projects</title>
+</head>
+<body>
+  <p>Youtube Subscribe Button</p>
+  <button onclick="
+    changeTxtBtn();
+  " class="js-subscribe-button">Subscribe</button>
+
+  <p>Amazon Shipping Calculator</p>
+  <input placeholder="Type here" class="js-input" onkeydown="handleKey(event)">
+  <button onclick="
+      calculateTotal();">
+      Calculate
+  </button>
+  <p class="js-cost"></p>
+  <script>
+    let txtButton=document.querySelector('.js-subscribe-button');
+    
+    //console.log(localStorage.getItem('InnerText'));
+    function changeTxtBtn(){
+      if(txtButton.innerText==='Subscribe'){
+        txtButton.innerHTML='Subscribed';
+      }else {
+        txtButton.innerHTML='Subscribe';
+      }
+    }
+      /*localStorage.setItem('InnerText',JSON.stringify(txtButton));*/
+      function calculateTotal(){
+        const inputElement=document.querySelector('.js-input');
+        let cost=Number(inputElement.value);
+
+       if(cost< 40){
+        cost +=10;
+  }
+    console.log(document.querySelector('.js-cost').innerHTML=`$${cost}`);
+
+   }
+
+   function handleKey(event){
+      if(event.key ==='Enter'){
+        calculateTotal();
+      }
+   }
+  
+  </script>
+</body>
+</html>
+
+
+
+<!-- 
+prosess for javascript
+1-figure out what steps we need(algorithm)
+2-convert these steps into code
+
+
+
+-->

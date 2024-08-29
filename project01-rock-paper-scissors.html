@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock-Papper-Scissors</title>
+</head>
+<body>
+  <p>Rock Papper Scissors</p>
+  
+  <button onclick="
+    playGame('Rock');
+  ">Rock</button>
+
+  <button onclick="
+    playGame('Paper');
+  ">Paper</button>
+  <button onclick="
+    playGame('Scissoers');
+    ">Scissors</button>
+  
+  
+  <script>
+    function playGame(playerMove){
+      computerMove=pickComputerMove();
+      if(playerMove==='Scissors'){
+        if(computerMove==='Rock'){
+            result='PC win';
+          }else if( computerMove==='Paper'){
+            result='Player win';
+          }else if (computerMove=== 'Scissors'){
+            result='Same same';
+          } 
+    }else if(playerMove==='Rock'){
+        if(computerMove==='Rock'){
+        result='Same Same';
+      }else if( computerMove==='Paper'){
+        result='PC win';
+      }else if (computerMove=== 'Scissors'){
+        result='Player win';
+    } 
+   }else if(playerMove==='Paper'){
+    if(computerMove==='Rock'){
+      result='Player win';
+    }else if( computerMove==='Paper'){
+      result='same same';
+    }else if (computerMove=== 'Scissors'){
+      result='PC win';
+    } 
+   }
+   alert(`computer choose ${computerMove} and player  choose ${playerMove}, ${result}.`);
+ }
+        
+    function pickComputerMove(){
+      numbers=[0,1,2];
+      randomNum=Math.floor(Math.random()*3);
+      let computerMove;
+      if(randomNum===0){
+        computerMove='Rock';
+      }else if(randomNum===1){
+        computerMove='Paper';
+      }else if(randomNum===2){
+        computerMove='Scissors';
+      }
+      return computerMove;
+    }
+
+  
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock-Papper-Scissors</title>
+</head>
+<body>
+  <p>Rock Papper Scissors</p>
+  <button onclick="
+  let numbers=[0,1,2];
+  let computerMove='';
+  
+     let randomNum= Math.floor(Math.random()*3);
+     if(randomNum===0){
+       computerMove='Rock';
+      //console.log('Rock');
+     }else if(randomNum===1){
+       computerMove='Papper';
+      //console.log('Paper');
+     }else{
+       computerMove='Scissors';
+      //console.log('Scissors');
+     }
+     //console.log(computerMove);
+    let result='';
+    if(computerMove==='Rock'){
+      result='same';
+    }else if( computerMove==='Paper'){
+      result='pc win';
+    }else if (computerMove=== 'Scissors'){
+      result='player win';
+    } 
+    alert(`computer choose ${computerMove} and player  choose rock, ${result}.`);
+  
+  
+  ">Rock</button>
+  <button onclick="
+    numbers=[0,1,2];
+    randomNum=Math.floor(Math.random()*3);
+    if(randomNum===0){
+      computerMove='Rock';
+    }else if(randomNum===1){
+      computerMove='Paper';
+    }else if(randomNum===2){
+      computerMove='Scissors';
+    }
+
+    if(computerMove==='Rock'){
+      result='Player win';
+    }else if( computerMove==='Paper'){
+      result='same same';
+    }else if (computerMove=== 'Scissors'){
+      result='pc win';
+    } 
+    alert(`computer choose ${computerMove} and player  choose Paper, ${result}.`);
+  
+  
+  ">Paper</button>
+  <button onclick="
+  numbers=[0,1,2];
+    randomNum=Math.floor(Math.random()*3);
+    if(randomNum===0){
+      computerMove='Rock';
+    }else if(randomNum===1){
+      computerMove='Paper';
+    }else if(randomNum===2){
+      computerMove='Scissors';
+    }
+
+    if(computerMove==='Rock'){
+      result='Pc win';
+    }else if( computerMove==='Paper'){
+      result='Player win';
+    }else if (computerMove=== 'Scissors'){
+      result='same same';
+    } 
+    alert(`computer choose ${computerMove} and player  choose Scissoers, ${result}.`);
+  
+  ">Scissors</button>
+  <script>
+
+
+  </script>
+</body>
+</html>

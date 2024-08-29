@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<head>
+  <title>Booleans</title>
+</head>
+<body>
+  <script>
+    /*falsy value: false, 0, '',Nan, undefined,null*/
+
+    true
+    false
+    //campare two numbers
+    3<5
+    //comparision operator
+    //== convert both value to the same type
+    console.log(5=='5.00');
+
+    //=== check the type too
+    console.log(5=== '5');
+
+    //==! not equal
+
+    console.log(3<5);
+    //syntax rule to booleans
+    console.log(typeof true);
+
+    if(true){
+      console.log('hello');
+    }
+
+    if(false){
+      console.log('hello');
+    }
+
+    if(false){
+      console.log('hello');
+    }else{
+      console.log('else');
+    }
+
+    if(30 >= 16){
+      console.log('you can drive.');
+    }else{
+      console.log('you can not drive.');
+    }
+
+    
+    if(15 >= 16){
+      console.log('you can drive.');
+    }else if(15>=14){
+      console.log('almost there!');
+    }
+    else{
+      console.log('you can not drive.');
+    }
+
+    /*falsy value: false, 0, '',Nan, undefined,null*/
+    const number=10;
+    if(number){
+      console.log('this is 10');
+    }
+   console.log('text'/10);
+   let num1;
+   console.log(num1);
+
+    if(false){
+      console.log('this is false');
+    }else if(0){
+      console.log('this is 0');
+    }else if(!0){
+      console.log('this is true');
+    }else if(''){
+      console.log('this is false');
+    }
+
+    /*shortcut for if-statements:
+    Ternary Operator?
+    const result= true ? 'truthy' : 'falsy';
+    Gaurd operator
+    Default operator
+    */
+   const message= 5 && 'hello';
+
+
+
+  </script>
+</body>

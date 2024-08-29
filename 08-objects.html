@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Object</title>
+</head>
+<body>
+  <script>
+   /*const product={
+      //name and price is property
+      name:'socks',
+      price:1090
+    };
+    console.log(product);
+    console.log(typeof product);
+    console.log(product.name);
+    console.log(product.price);
+
+    product.name='cotton socks';
+    console.log(product);
+
+    product.newProperty=true;
+    console.log(product);
+
+    delete product.newProperty;
+    console.log(product);*/
+
+
+    //object reference
+    const object1={
+      message:'hell'
+    }
+    const object2= object1;
+    console.log(object1.message='good job!');
+    console.log(object2);
+
+    //we cant compare objects directly, compares the references not the values inside
+    const object3={
+      message:'good job!'
+    };
+    //Difference references
+    console.log(object3=== object1);
+    //same refernces
+    console.log(object1===object2);
+
+    const obj4={
+      message:'hello',
+      price:599
+    }
+    //const message= obj4.message;
+    //Destructuring: when the variable and property has the same name, we use this shortcut
+    const {message,price}=obj4;
+    console.log(message);
+    console.log(price);
+
+    
+    const objects5={
+      //shorthand property
+      //message:message
+      message,
+      //shorthand method
+      /*method:function function1(){
+        console.log('method');
+      }*/
+      //both is the same
+      method(){
+        console.log('method');
+      }
+    };
+    objects5.method();
+    console.log(objects5);
+
+
+
+  </script>
+</body>
+</html>

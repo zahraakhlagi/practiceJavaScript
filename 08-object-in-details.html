@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Built In Object</title>
+</head>
+<body>
+  <script>
+    const product2={
+      name:'shirt',
+      'delivery-time':'1 day',
+      rating:{
+        stars:4.5,
+        count:87
+      },
+      fun:function function1(){
+        console.log('test function inside object.')
+      }
+    }
+    //convert js to json
+    console.log(JSON.stringify(product2));
+    
+    //convert json to js
+    const jsonString=JSON.stringify(product2);
+    console.log(JSON.parse(jsonString));
+
+    //localStorage
+    /*
+    -variables are temporary
+    -if we refresh / close the page, all the
+    variables are deleted
+    */
+   
+  </script>
+</body>
+</html>
