@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document object model projects</title>
+  <style>
+      body{
+      font-family: Arial;
+     } 
+     /*space inside is padding 
+     space on the outside element is margin*/
+     .subscribe-button{
+      border: none;
+      background-color: black;
+      color: white;
+      padding-top:10px; 
+      padding-bottom: 10px;
+      padding-left: 10px;
+      padding-right: 15px;
+      font-weight: bold;
+      border-radius: 50px;
+      cursor: pointer;
+      margin-bottom: 30px;
+     }
+     .is-subscribed{
+      background-color: rgb(250, 238, 238);
+      color: black;
+     }
+     .cost-input{
+      font-size: 15px;
+      padding: 10px;
+     }
+     .calculate-button{
+      background-color: green;
+      color: white;
+      border: none;
+      font-size: 15px;
+      padding: 12px 15px;
+      cursor: pointer;
+     }
+     
+  </style>
+</head>
+<body>
+  <p>Youtube Subscribe Button</p>
+  <button onclick="
+    changeTxtBtn();
+  " class="js-subscribe-button subscribe-button">Subscribe</button>
+
+  <p>Amazon Shipping Calculator</p>
+  <input placeholder="Type here" class="js-input cost-input" onkeydown="handleKey(event)">
+  <button onclick="
+      calculateTotal();" class="calculate-button">
+      Calculate
+  </button>
+  <p class="js-cost"></p>
+  <script>
+    let txtButton=document.querySelector('.js-subscribe-button');
+    
+    //console.log(localStorage.getItem('InnerText'));
+    function changeTxtBtn(){
+      if(txtButton.innerText==='Subscribe'){
+        txtButton.innerHTML='Subscribed';
+        /*when we click the button: add a class , 2-this class has a different style*/
+        txtButton.classList.add('is-subscribed');
+      }else {
+        txtButton.innerHTML='Subscribe';
+        txtButton.classList.remove('is-subscribed');
+      }
+    }
+      /*localStorage.setItem('InnerText',JSON.stringify(txtButton));*/
+      function calculateTotal(){
+        const inputElement=document.querySelector('.js-input');
+        let cost=Number(inputElement.value);
+
+       if(cost< 40){
+        cost +=10;
+  }
+    console.log(document.querySelector('.js-cost').innerHTML=`$${cost}`);
+
+   }
+
+   function handleKey(event){
+      if(event.key ==='Enter'){
+        calculateTotal();
+      }
+   }
+  
+  </script>
+</body>
+</html>
+
+
+
+<!-- 
+prosess for javascript
+1-figure out what steps we need(algorithm)
+2-convert these steps into code
+
+
+
+-->
