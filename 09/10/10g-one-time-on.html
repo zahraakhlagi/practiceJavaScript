@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Off-On Button</title>
+  <style>
+      .toggle-button {
+        background-color: rgb(230,230,230);
+        border: none;
+        padding: 10px 15px;
+        margin-right: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 15px;
+      }
+      .music-button{
+        background-color: rgb(230,230,230);
+        border: none;
+        padding: 10px 15px;
+        margin-right: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 15px;
+      }
+      .tech-button{
+        background-color: rgb(230,230,230);
+        border: none;
+        padding: 10px 15px;
+        margin-right: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 15px;
+      }
+
+      .is-toggled{
+        background-color: black;
+        color: white;
+      }
+  </style>
+</head>
+<body>
+    
+      <button class="toggle-button js-button" onclick="toggleButton('.toggle-button')">Gaming</button>
+      <button class="music-button music-off" onclick="toggleButton('.music-button')">Music</button>
+      <button class="tech-button tech-off" onclick="toggleButton('.tech-button')">Tech</button>
+  <script>
+    function toggleButton(selector){
+      let button1=document.querySelector(selector);
+      //before turning this button on , check if there is
+      if(!button1.classList.contains('is-toggled')){
+        turnOffPreviousButton();
+        button1.classList.add('is-toggled');
+      }else{
+        button1.classList.remove('is-toggled');
+      }
+
+    }
+    function turnOffPreviousButton(){
+      let previousButton= document.querySelector('.is-toggled');
+      if(previousButton){
+        previousButton.classList.remove('is-toggled');
+      }
+    }
+   
+
+
+  </script>
+  
+</body>
+</html>

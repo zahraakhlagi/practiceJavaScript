@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Off-On Button</title>
+  <style>
+      .toggle-button {
+        background-color: rgb(230,230,230);
+        border: none;
+        padding: 10px 15px;
+        margin-right: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 15px;
+      }
+      .music-button{
+        background-color: rgb(230,230,230);
+        border: none;
+        padding: 10px 15px;
+        margin-right: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 15px;
+      }
+      .tech-button{
+        background-color: rgb(230,230,230);
+        border: none;
+        padding: 10px 15px;
+        margin-right: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 15px;
+      }
+
+      .is-toggled{
+        background-color: black;
+        color: white;
+      }
+  </style>
+</head>
+<body>
+    
+      <button class="toggle-button js-button" onclick="turnOnButton()">Gaming</button>
+      <button class="music-button music-off" onclick="turnOffMusic()">Music</button>
+      <button class="tech-button tech-off" onclick="turnOffTech()">Tech</button>
+  <script>
+    let Button1= document.querySelector('.js-button');
+    let musicButton=document.querySelector('.music-button');
+    let techButton=document.querySelector('.tech-button');
+    function turnOnButton(){
+      if(!Button1.classList.contains('is-toggled')){
+        Button1.classList.add('is-toggled');
+      }else{
+        Button1.classList.remove('is-toggled');
+      }
+    }
+    function turnOffMusic(){
+      if(!musicButton.classList.contains('is-toggled')){
+        musicButton.classList.add('is-toggled');
+      }else{
+        musicButton.classList.remove('is-toggled');
+      }
+    }
+
+    function turnOffTech(){
+      if(!techButton.classList.contains('is-toggled')){
+        techButton.classList.add('is-toggled');
+      }else{
+        techButton.classList.remove('is-toggled');
+      }
+    }
+
+
+  </script>
+  
+</body>
+</html>

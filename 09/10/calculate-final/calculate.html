@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="calculate.css">
+</head>
+<body>
+  <p class="js-calculation"></p><br><br><br><br>
+  <p>
+    <button onclick="updateCalculation('1')" class="number-button">1</button>
+    <button onclick="updateCalculation('2')" class="number-button">2</button>
+    <button onclick="updateCalculation('3')" class="number-button">3</button>
+    <button onclick="updateCalculation('+')" class="operation-button">+</button>
+  </p>
+  <p>
+    <button onclick="updateCalculation('4')" class="number-button">4</button>
+    <button onclick="updateCalculation('5')" class="number-button">5</button>
+    <button onclick="updateCalculation('6')" class="number-button">6</button>
+    <button onclick="updateCalculation('-')" class="operation-button">-</button>
+  </p>
+  <p>
+    <button onclick="updateCalculation('7')" class="number-button">7</button>
+    <button onclick="updateCalculation('8')" class="number-button">8</button>
+    <button onclick="updateCalculation('9')" class="number-button">9</button>
+    <button onclick="updateCalculation('*')" class="operation-button">*</button>
+  </p>
+  <p>
+    <button onclick="updateCalculation('0')" class="number-button">0</button>
+    <button onclick="updateCalculation('.')" class="number-button">.</button>
+    <button onclick="
+    //use eval() just for learning
+    calculation=eval(calculation);
+    displayCalculation();
+    localStorage.setItem('calculation',calculation);
+    " class="number-button">=</button>
+    <button onclick="updateCalculation('/')" class="operation-button">/</button>
+  </p>
+  <p>
+    <button onclick="
+      calculation='';
+      displayCalculation();
+      localStorage.setItem('calculation',calculation);
+      " class="number-button">Clear</button>
+  </p>
+
+  <script src="calculate.js"></script>
+  
+</body>
+</html>
