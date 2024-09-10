@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>write your message</p>
+  <input placeholder="text" class="js-input" onkeydown="enterKey(event)">
+  <button onclick="takeMessage()" class="js-button">Show message</button>
+  <div class="js-div"></div>
+  <script>
+    let saveMessage=[];
+    renderMessage();
+    
+    function takeMessage(){
+      let inputElement=document.querySelector('.js-input');
+      let inputValue=inputElement.value;
+
+      saveMessage.push(inputValue);
+      console.log(saveMessage);
+      inputElement.value='';
+      renderMessage();
+      
+    }
+  
+    function renderMessage(){
+      let saveData='';
+      let divElement= document.querySelector('.js-div');
+      for(let i=0; i< saveMessage.length; i++){
+        let message=saveMessage[i];
+        let html= `<p> ${message} </p>`;
+        console.log(html);
+        saveData+=html;
+      }
+      document.querySelector('.js-div').innerHTML= saveData;
+    }
+
+    function enterKey(event){
+      if(event.key==='Enter'){
+        takeMessage();
+      }
+    }
+   
+
+  </script>
+  
+</body>
+</html>

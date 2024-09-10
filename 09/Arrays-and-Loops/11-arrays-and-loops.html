@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrays and loops</title>
+  
+</head>
+<body>
+  <script>
+    /*Arrays is another type of value and represents a list of values*/
+    const myArray=[10,20,30];
+    console.log(myArray);
+    console.log(myArray[0]);
+    console.log(myArray[1]);
+    console.log(myArray[2]);
+    myArray[0]= 99;
+    console.log(myArray[0]);
+    //to check the array
+    console.log(Array.isArray([1,2]));
+    console.log(myArray.length);
+    //push() :adds a value to the end of the array
+    myArray.push(100);
+    console.log(myArray);
+    //splice(x,y): remove the index from the array: x:index we want to remove y:numbers of values to remove
+    myArray.splice(0,1);
+    console.log(myArray);
+
+    myArray.splice(0,2);
+    console.log(myArray)
+
+    // while loop:Non standard loop
+    let randomNum=0;
+    while(randomNum<0.6){
+      randomNum=Math.random();
+    }
+    console.log(randomNum);
+
+    //loop through an array
+    const todoList=[
+      'dag',
+      'cat',
+      'fish',
+      'bird'
+    ];
+    for(let i=0; i<todoList.length;i++){
+      const value= todoList[i];
+      console.log(value);
+    }
+    //Accumulator pattern
+    let nums=[1,1,4];
+    let total=0;
+
+    for(let i=0; i< nums.length; i++){
+      let num=nums[i];
+      total+=num;
+    }
+    console.log(total);
+    
+    //[2,2,6]
+    numsDoubled=[];
+    for(let i=0; i<nums.length;i++){
+      let num= nums[i];
+      numsDoubled.push(num*2);
+    }
+    console.log(numsDoubled);
+
+
+  </script>
+ 
+</body>
+</html>
+
+
+

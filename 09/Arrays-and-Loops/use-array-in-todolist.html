@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input placeholder="TODO name" class="js-input">
+  <button class="js-button" onclick="AddToDoList()">Add</button>
+  <div class="js-showList"></div>
+  <script>
+    
+    let todoList=[];
+    renderTodoList();
+     function AddToDoList(){
+        let inputElement= document.querySelector('.js-input');
+        let inputValue= inputElement.value;
+        todoList.push(inputValue);
+        //console.log(todoList);
+        inputElement.value='';
+        renderTodoList();
+
+    }
+     function renderTodoList(){
+      let showList= document.querySelector('.js-showList');
+    //Accumulator pattern:we need a accumulator variable
+      let todoListhtml='';
+
+      for(let i=0; i<todoList.length; i++){
+      let todo=todoList[i];
+      const html=`<p>${todo}</p>`;
+      //console.log(html);
+      todoListhtml+=html;
+    }
+    //console.log(todoListhtml);
+    showList.innerHTML=todoListhtml;
+    
+    }
+
+  </script>
+  
+</body>
+</html>
