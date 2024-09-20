@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button onclick="
+        activeButton();
+    " class="js-button ">start</button>
+  <button onclick="
+      addMessage();
+  " class="js-add-message">Add to cart</button>
+  <p class="js-display-message"></p>
+  <script>
+    function activeButton(){
+      let buttonElement=document.querySelector('.js-button');
+      let value= buttonElement.innerHTML='start';
+
+      let isLoading=false;
+      if(value==='start'){
+        document.querySelector('.js-button').innerHTML='Loading...';
+      }
+
+      setTimeout(function(){
+        if(!isLoading){
+          document.querySelector('.js-button').innerHTML='finished!';
+          isNotStart=true;
+        }
+      },1000);
+    }
+      let timeoutid;
+      function addMessage(){
+          let message=document.querySelector('.js-display-message');
+          let value=message.innerHTML='Added';
+          clearTimeout(timeoutid);
+          timeoutid=setTimeout(function(){
+            message.innerHTML='';
+          },2000);
+      }
+
+      
+  </script>
+</body>
+</html>

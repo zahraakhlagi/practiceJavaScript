@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App</title>
+</head>
+<body>
+  <button onclick="
+          messages++;
+          displayNotification();
+     ">Add</button>
+
+<button onclick="
+      if(messages>0){
+        messages--;
+        if(messages===0){
+          stopNotification();
+      }
+    }
+      
+    
+
+    ">Remove</button>
+
+    <script>
+      //we create this variable to track of whether or not we are displaying the notification
+      let isDisplayNotification;
+      let messages=2;
+      let intervalId;
+      function displayNotification(){
+        //if we are already displaying a notification , stop the function because we dont want to create 2 intervals at the same time
+        if(isDisplayNotification){
+          return;
+        }
+        isDisplayNotification=true;
+        intervalId=setInterval(function(){
+            if(document.title==='App'){
+              document.title=`(${messages}) new messages`;
+            }else{
+              document.title='App';
+            }
+        },2000);
+
+      }
+
+      function stopNotification(){
+        isDisplayNotification=false;
+        clearInterval(intervalId);
+        document.title='App';
+      }
+
+    </script>
+  
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //11a
+    const numbers=[10,20,30];
+    numbers[2]= 99;
+    console.log(numbers[2]);
+    //11b
+    function getLastValue(array){
+      let lastIndex=array.length-1;
+      return array[lastIndex];
+    }
+    console.log(getLastValue(numbers));
+    //11c
+    function arraySwap(array){
+      let lastIndex=array.length-1;
+      //we need to save the value first before switching
+      let firstValue= array[0];
+      let lastValue= array[lastIndex];
+      //now we save the switching
+      array[0]= lastValue;
+      array[lastIndex]=firstValue;
+      return array;
+    }
+    console.log(arraySwap([1,2,3,4,5]));
+
+    //11d
+    for(let num=0; num <11; num+=2){
+      
+      console.log(num);
+    }
+    console.log('=======11e=========');
+    //11e
+    for(let num2=5; num2>0; num2--){
+      console.log(num2);
+    }
+    console.log('=======11f=========');
+    //12f
+    let number=0;
+    while(number<11){
+      number+=2;
+      console.log(number);
+    }
+    console.log('=======11f=========');
+    let cost=5;
+    while(cost>0){
+      console.log(cost);
+      cost--
+    }
+    console.log('=======11g=========');
+    let items=[2,3,4];
+    let newArray=[];
+    for(let i=0; i< items.length;i++){
+        let item=items[i];
+        newArray.push(item+=1);
+        
+    }
+    console.log(newArray);
+
+    console.log('=======11h=========');
+    function addOne(array){
+      let newArray=[];
+      for(let i=0; i< array.length;i++){
+        let item= array[i];
+        newArray.push(item+=1);
+      }
+      console.log(newArray);
+    }
+    addOne([9,8,7]);
+    console.log('=======11i=========');
+    function addNum(array,num){
+      let newArray=[];
+      for(let i=0; i< array.length; i++){
+        let item=array[i];
+        newArray.push(item+=num);
+      }
+      console.log(newArray);
+    }
+    console.log(addNum([4,5,8],2));
+
+    console.log('=======11j=========');
+    function addArrays(array1,array2){
+      let newArray=[];
+      for(let i=0; i< array1.length; i++){
+         newArray.push(array1[i]+ array2[i]);
+    }
+    return newArray;
+  }
+    console.log(addArrays([1,2,3],[4,5,6]));
+
+    console.log('=======11k=========');
+    function countPositive(array){
+      let newArray=[];
+      for(let i=0; i< array.length; i++){
+        let item= array[i];
+        if(item>0){
+          newArray.push(item);
+        }
+      }
+      return newArray.length;
+    }
+    console.log(countPositive([-2,3,-7,19]));
+    console.log(countPositive([-2,3,-7,19,13,-4,9,4,98]));
+
+    console.log('=======11l=========');
+
+    function minMax(array){
+      object1={min:array[0], max:array[0]};
+      for(let i=0; i< array.length;i++){
+        let item=array[i];
+        if(item> object1.max){
+          object1.max= array[i];
+        }else if(item < object1.min){
+          object1.min= array[i];
+        }
+      }
+      console.log(`min: ${object1.min}, max: ${object1.max}`);
+}
+    minMax([2,-3,5]);
+    minMax([109,-45,300,2]);
+
+    console.log('=======11m=========');
+    
+    function minMax01(array){
+      object2={min:null, max:null};
+
+      for(let i=0; i< array.length; i++){
+        let item=array[i];
+        if(object2.min===null || item< object2.min){
+          object2.min= item;
+        }
+        if(object2.max===null || item> object2.max){
+          object2.max=item;
+        }
+      }
+      //console.log(`min: ${object2.min}, max: ${object2.max}`);
+      return object2;
+    }
+     console.log(minMax01([]));
+     console.log(minMax01([3]));
+     console.log(minMax01([4,1,-4,10]));
+     
+
+
+  </script>
+</body>
+</html>

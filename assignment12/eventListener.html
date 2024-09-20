@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button onclick="" class="js-button">Click</button>
+
+  <script>
+    //we use addEventlistener instead of onclick why?
+    const buttonElement= document.querySelector('.js-button');
+    const eventListener= ()=>{
+      console.log('click');
+    };
+    buttonElement.addEventListener('click',eventListener);
+
+    //remove event
+    buttonElement.removeEventListener('click',eventListener);
+
+    //add an other event to the button
+    buttonElement.addEventListener('click',()=>{
+      console.log('click2');
+    })
+
+
+
+  </script>
+</body>
+</html>

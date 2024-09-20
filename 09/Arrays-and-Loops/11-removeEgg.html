@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let names=['ali','mahdi','search','hello'];
+    let index=-1;
+    for(let i=0; i< names.length; i++){
+      
+      if(names[i]==='search'){
+        index=i;
+      }
+    }
+    console.log(index);
+    console.log('====================11r==========');
+    function removeEgg(foods){
+      let result=[];
+      for(let i=0; i<foods.length;i++){
+        if(foods[i]==='egg'){
+          continue;
+        }
+        let food=foods[i];
+        result.push(food);
+      }
+      return result;
+    }
+    console.log(removeEgg(['egg','apple','egg','ham','egg']));
+
+    console.log('====================11s==========');
+    function removeTwoEggs(foods){
+      let result=[];
+      let eggCount=0;
+      for(let i=0; i<foods.length; i++){
+        if(foods[i]==='egg'){
+          eggCount++;
+          console.log(eggCount);
+          if(eggCount <=2){
+          continue;
+        }
+      }
+      let food=foods[i];
+      result.push(food);
+  }
+        
+      return result;
+}
+    console.log(removeTwoEggs(['egg','apple','egg','ham','egg']));
+
+    function removeEggAndReverse(array){
+      let result=[];
+      
+      let eggAccount=0;
+      for(let i=0; i<array.length;i++){
+        let item=array[i];
+        if(item==='egg'){
+          eggAccount++;
+          if(eggAccount<=2){
+            continue;
+          }
+        }
+        result.push(item);
+      }
+      let reversedResult=[...result].reverse();
+      return reversedResult;
+    }
+    console.log(removeEggAndReverse(['egg','apple','egg','ham','egg']));
+    
+  </script>
+</body>
+</html>

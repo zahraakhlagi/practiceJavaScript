@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App</title>
+</head>
+<body>
+  <button class="js-button">start</button>
+  <button class="js-add-button">Add to cart</button>
+  <div class="js-display"></div>
+
+  <button class="js-increase">Add</button>
+  <button class="js-decrease">Remove</button>
+
+  <script>
+    //12c,12d
+    const buttonElement= document.querySelector('.js-button');
+    buttonElement.addEventListener('click',()=>{
+        loadingBtn();
+        finishBtn();
+    });
+    function finishBtn(){
+      setTimeout(()=>{
+        buttonElement.innerHTML='Finished';
+      },1000);
+      
+    }
+    function loadingBtn(){
+      buttonElement.innerHTML='Loading';
+    }
+
+    //12e
+    const addButton= document.querySelector('.js-add-button');
+    addButton.addEventListener('click',()=>{
+      let timeoutId;
+        document.querySelector('.js-display').innerHTML='Added';
+        clearTimeout(timeoutId);
+         timeoutId=setTimeout(() => {
+          document.querySelector('.js-display').innerHTML='';
+        }, 2000);
+    });
+    //12g<za08>
+    let intervalId;
+    let checkNotification;
+    //we call the function here first
+    displayNotification();
+    console.log('display');
+    function displayNotification(){
+      if(checkNotification){
+          return;
+        }
+      checkNotification=true;
+      intervalId= setInterval(()=>{
+        if(document.title==='App'){
+          document.title=`(${messages}) New messages`;
+        }else{
+          document.title='App';
+        }
+       
+      },1000);
+    }
+
+    function stopNotification(){
+      checkNotification=false;
+      clearInterval(setInterval);
+      document.title='App';
+    }
+
+    const increaseButton= document.querySelector('.js-increase');
+    const decreaseButton=document.querySelector('.js-decrease');
+
+    increaseButton.addEventListener('click',()=>{
+        messages++;
+        displayNotification();
+    });
+    decreaseButton.addEventListener('click',()=>{
+      if(messages>0){
+        messages--;
+        if(messages===0){
+        stopNotification();
+         }
+      }
+      
+    });
+        
+
+    displayNotification();
+     
+  </script>
+  
+</body>
+</html>

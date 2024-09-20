@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=script, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const regularFunction=function(){
+      console.log('regular function');
+    }
+    const arrowFunction=()=>{
+      console.log('hello');
+    };
+    regularFunction();
+    arrowFunction();
+    //shortcut
+    const arrowFunction1=(param)=>{
+        console.log(param+1);
+    }
+    const arrowFunction2=param=>{
+      console.log(param+2);
+    }
+    const arrowFunction3=()=>{
+      return(2+3);
+    }
+    const arrowFunction4= ()=>2+3;
+    arrowFunction1(2);
+    arrowFunction2(1);
+    console.log(arrowFunction3());
+    console.log(arrowFunction4());
+    //with regular function
+    ['ali','mahdi','soraya','zahra'].forEach(function(value,index){
+      console.log(value);
+    });
+    // with arrow function
+    ['apple','water','banana','gurka'].forEach((value,index)=>{
+      if(value==='gurka'){
+        return;
+      }
+      console.log(value);
+    })
+
+    //shorthands method
+  //we use arrow function in a object aswell
+  const object2={
+    method:()=>{
+
+    },
+    method(){
+      
+    }
+  }
+  </script>
+</body>
+</html>
