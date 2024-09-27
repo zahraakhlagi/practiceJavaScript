@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=script, initial-scale=1.0">
+  <title>App</title>
+</head>
+<body>
+  <button onclick="increaseMessage()" class="add-button">Add</button>
+  <button onclick="decreaseMessage()" class="remove-button">Remove</button>
+  <script>
+    let count=2;
+    setInterval(()=>{
+      if(count===0){
+        document.title='App';
+      }else if(count >0){
+        document.title=`(${count}) New message`;
+      }
+    },1000)
+
+    function increaseMessage(){
+      count++;
+    }
+
+    function decreaseMessage(){
+      if(count>0){
+        count--;
+      }
+     }
+  </script>
+</body>
+</html>

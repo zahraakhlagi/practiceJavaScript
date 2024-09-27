@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button onclick="addToCart()" class="add-button">Add to cart</button>
+  <p class="add-message"></p>
+  <script>
+    let buttonElement= document.querySelector('.add-button');
+    let setTimeId;
+    /*buttonElement.addEventListener(()=>{
+          setTimeout(()=>{
+            AddToCart();
+          },2000)
+        });*/
+    function addToCart(){
+      let messageElement= document.querySelector('.add-message');
+      messageElement.innerHTML='Added';
+        clearTimeout(setTimeId);
+        setTimeId= setTimeout(()=>{
+        
+        messageElement.innerHTML='';
+       },2000);
+       
+    }
+  </script>
+</body>
+</html>
